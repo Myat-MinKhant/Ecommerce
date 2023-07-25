@@ -30,7 +30,7 @@ const AllProducts = () => {
           className='flex flex-wrap my-5 items-center mobile:justify-center mobile:gap-10 tablet:gap-5 laptop:gap-0 laptop:justify-start laptop:ml-7'>
           {products.map(product => (
             <Box className=' tablet:mb-5 laptop:mb-8'>
-              <Card className=' w-48 h-48 rounded-xl bg-transparent '>
+              <Card className=' w-48 h-48 shadow-none rounded-xl bg-transparent '>
                 <Box className='flex w-full h-full bg-white relative'>
                   <Link to={'/detail/'+ product.id} onClick={() => dispatch(productDetailShow(product))} className=" m-auto"><img
                     className=' w-25 h-28'

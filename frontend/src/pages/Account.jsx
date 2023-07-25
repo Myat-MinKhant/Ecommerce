@@ -49,57 +49,57 @@ const Account = () => {
 
 
     return (
-        <div className=' bg-second w-screen h-fit'>
-            <Container className='flex h-fit'>
-                <Box className=' w-4/6 py-10 my-10 rounded-xl bg-white px-10 ml-6 shadow-xl'>
-                    <Typography id='order' component={'span'} className=' cursor-pointer text-4xl mr-7 underline underline-offset-8' onClick={orderShow}>Orders</Typography>
-                    <Typography id='wish-list' component={'span'} className=' cursor-pointer text-4xl text-third ' onClick={wishListShow}>Wistlist</Typography>
+        <div className=' bg-body w-full h-fit'>
+            <Container className='tablet:flex h-fit gap-4 laptop:gap-0'>
+                <Box className=' laptop:w-1/2 py-10 my-10 laptop:pt-14 laptop:pb-5 rounded-xl bg-white tablet:w-80 tablet:px-8 laptop:ml-8 tablet:shadow-xl'>
+                    <Typography id='order' component={'span'} className=' font-main cursor-pointer laptop:text-4xl text-3xl mobile:ml-10 tablet:ml-0 mr-7 underline underline-offset-8' onClick={orderShow}>Orders</Typography>
+                    <Typography id='wish-list' component={'span'} className=' font-main cursor-pointer laptop:text-4xl text-3xl text-third ' onClick={wishListShow}>Wistlist</Typography>
                     <Box display={orderDisplay}>
-                        <List className=' mt-10'>
+                        <List className=' mt-10 ml-8 tablet:ml-0'>
                             <Box>
-                                <ListItem className=' flex w-full pl-0 items-center'>
-                                    <Box className='w-1/2'>
-                                        <Typography className=' text-lg mb-2'>2023-04-05 17:35:38</Typography>
-                                        <Typography className=' text-sm text-third'>Myat Min Khant</Typography>
-                                        <Typography className=' text-sm text-third'>myatminkhant.123@gmail.com</Typography>
-                                        <Typography className=' text-sm text-third'>Test 123</Typography>
-                                        <Typography className=' text-sm text-third'>Yangon</Typography>
+                                <ListItem className='flex w-full mobile:flex-col tablet:flex-row pl-0 items-start tablet:items-start laptop:items-center'>
+                                    <Box className='tablet:w-1/2'>
+                                        <Typography className='font-main text-xl mb-2'>2023-04-05 17:35:38</Typography>
+                                        <Typography className='font-main text-md text-third'>Myat Min Khant</Typography>
+                                        <Typography className='font-main text-md text-third'>myatminkhant.123@gmail.com</Typography>
+                                        <Typography className='font-main text-md text-third'>Test 123</Typography>
+                                        <Typography className='font-main text-md text-third'>Yangon</Typography>
                                     </Box>
-                                    <Box className='w-1/2'>
-                                        <Typography component={'span'} className=' text-lg text-third'>1 x </Typography>
-                                        <Typography component={'span'} className=' text-lg'>iPhone 14 Plus</Typography>
+                                    <Box className='tablet:w-1/2 mobile:mt-3 tablet:mt-0 laptop:text-end'>
+                                        <Typography component={'span'} className=' font-main text-lg text-third'>1 x </Typography>
+                                        <Typography component={'span'} className=' font-main text-lg'>iPhone 14 Plus</Typography>
                                     </Box>
                                 </ListItem>
                                 <Divider className='bg-second' />
                             </Box>
                             <Box>
-                                <ListItem className=' flex w-full pl-0 items-center'>
-                                    <Box className='w-1/2'>
-                                        <Typography className=' text-lg mb-2'>2023-04-07 18:06:00</Typography>
-                                        <Typography className=' text-sm text-third'>Myat Min Khant</Typography>
-                                        <Typography className=' text-sm text-third'>myatminkhant.123@gmail.com</Typography>
-                                        <Typography className=' text-sm text-third'>Test 123</Typography>
-                                        <Typography className=' text-sm text-third'>Yangon</Typography>
+                                <ListItem className='flex w-full pl-0 items-start mobile:flex-col tablet:flex-row tablet-items-start laptop:items-center'>
+                                    <Box className='tablet:w-1/2'>
+                                        <Typography className='font-main text-xl mb-2'>2023-04-07 18:06:00</Typography>
+                                        <Typography className='font-main text-md text-third'>Myat Min Khant</Typography>
+                                        <Typography className='font-main text-md text-third'>myatminkhant.123@gmail.com</Typography>
+                                        <Typography className='font-main text-md text-third'>Test 123</Typography>
+                                        <Typography className='font-main text-md text-third'>Yangon</Typography>
                                     </Box>
-                                    <Box className='w-1/2'>
-                                        <Typography component={'span'} className=' text-lg text-third'>1 x </Typography>
-                                        <Typography component={'span'} className=' text-lg'>MacBook Air 13"</Typography>
+                                    <Box className='tablet:w-1/2 mobile:mt-3 tablet:mt-0 laptop:text-end'>
+                                        <Typography component={'span'} className='font-main text-lg text-third'>1 x </Typography>
+                                        <Typography component={'span'} className='font-main text-lg'>MacBook Air 13"</Typography>
                                     </Box>
                                 </ListItem>
                                 <Divider className='bg-second' />
                             </Box>
                             <Box>
-                                <ListItem className=' flex w-full pl-0 items-center'>
-                                    <Box className='w-1/2'>
-                                        <Typography className=' text-lg mb-2'>2020-02-28 8:27:46</Typography>
-                                        <Typography className=' text-sm text-third'>Myat Min Khant</Typography>
-                                        <Typography className=' text-sm text-third'>myatminkhant.123@gmail.com</Typography>
-                                        <Typography className=' text-sm text-third'>Test 123</Typography>
-                                        <Typography className=' text-sm text-third'>Yangon</Typography>
+                                <ListItem className='flex w-full pl-0 items-start mobile:flex-col tablet:flex-row tablet:items-start laptop:items-center'>
+                                    <Box className='tablet:w-1/2'>
+                                        <Typography className='font-main text-xl mb-2'>2020-02-28 8:27:46</Typography>
+                                        <Typography className='font-main text-md text-third'>Myat Min Khant</Typography>
+                                        <Typography className='font-main text-md text-third'>myatminkhant.123@gmail.com</Typography>
+                                        <Typography className='font-main text-md text-third'>Test 123</Typography>
+                                        <Typography className='font-main text-md text-third'>Yangon</Typography>
                                     </Box>
-                                    <Box className='w-1/2'>
-                                        <Typography component={'span'} className=' text-lg text-third'>1 x </Typography>
-                                        <Typography component={'span'} className=' text-lg'>iPhone 11 Pro</Typography>
+                                    <Box className='tablet:w-1/2 mobile:mt-3 tablet:mt-0 laptop:text-end'>
+                                        <Typography component={'span'} className='font-main text-lg text-third'>1 x </Typography>
+                                        <Typography component={'span'} className='font-main text-lg'>iPhone 11 Pro</Typography>
                                     </Box>
                                 </ListItem>
                                 <Divider className='bg-second' />
@@ -109,13 +109,13 @@ const Account = () => {
 
                     <Box display={wishListDisplay}>
                         {wishListItems.length === 0 ? (
-                            <Box className='mt-10'>
+                            <Box className='mt-10 text-center tablet:text-start'>
                                 <Typography className=' text-2xl text-third'>Your wishlist is empty</Typography>
                             </Box>
                         ) : (
-                            <Box className=' mt-10 flex flex-wrap justify-start'>
+                            <Box className=' mt-7 tablet:mt-10 flex flex-wrap justify-center laptop:justify-start'>
                                 {wishListItems.map(item => (
-                                    <Box className=' mx-9 mt-5 '>
+                                    <Box className=' mx-9 mt-5 laptop:mx-5 tablet:mx-0 '>
                                         <Card className=' w-48 h-48 rounded-xl bg-transparent shadow-none'>
                                             <Box className='flex w-full h-full bg-white relative'>
                                                 <Link to={'/detail/' + item.id} onClick={() => dispatch(productDetailShow(item))} className=" m-auto"><img
@@ -128,17 +128,17 @@ const Account = () => {
                                                 </IconButton>
                                             </Box>
                                         </Card>
-                                        <Box className=' mt-2'>
-                                            <Typography className=' text-sm font-semibold'>
+                                        <Box className=' mt-2 laptop:mb-5'>
+                                            <Typography className=' font-main text-xl font-semibold'>
                                                 {item.name}
                                             </Typography>
-                                            <Box className='mt-1 flex items-center h-15'>
+                                            <Box className='mt-1  flex items-center h-15'>
                                                 <Typography
                                                     component='h2'
-                                                    className=' text-lg font-extrabold mr-5'>
+                                                    className='font-main text-2xl font-extrabold mr-5'>
                                                     ${item.price}
                                                 </Typography>
-                                                <Button className=' text-green-900 border-solid border-2 text-md font-bold w-30 h-5 capitalize p-4 mr-5'
+                                                <Button className=' text-green-900 border-solid border-2 text-md font-bold w-30 h-5 capitalize p-4 mt-3 tablet:mr-5'
                                                     onClick={() => dispatch(addToCart(item))}>
                                                     Add to cart
                                                 </Button>
@@ -153,9 +153,9 @@ const Account = () => {
                     </Box>
                 </Box>
 
-                <Box className='w-3/6'>
-                    <Box className='flex flex-col gap-2 bg-white pt-16 pb-10 rounded-xl w-96 ml-10 mt-10 shadow-xl' position={'sticky'}>
-                        <Typography className=' text-3xl w-5/6 mx-auto font-extrabold mb-6'>Account details</Typography>
+                <Box className=' w-full tablet:w-1/3 laptop:w-1/2'>
+                    <Box className='flex flex-col gap-2 bg-white pt-8 pb-5 mb-5 tablet:mb-0 tablet:pt-14 tablet:pb-10 rounded-xl w-full tablet:w-80 laptop:w-96 ml-0 laptop:ml-10 laptop:mr-4 mt-10 shadow-xl' position={'sticky'}>
+                        <Typography className=' font-main text-3xl laptop:text-4xl w-5/6 mx-auto font-extrabold tablet:mb-6 mb-4'>Account details</Typography>
                         <TextField sx={style}
                             variant="outlined" size='small' placeholder='Myat Min Khant' className='w-5/6 mx-auto' />
                         <TextField sx={style}

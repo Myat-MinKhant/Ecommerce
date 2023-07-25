@@ -19,10 +19,10 @@ const PageTitle = () => {
         <Box className='min-w-fit tablet:w-1/2 laptop:w-3/5'>
           <StyledBox className=' mobile:p-0  tablet:mt-5' />
         </Box>
-        <Box className='tablet:w-1/2 tablet:m-0 laptop:mr-12'>
+        <Box className='tablet:w-1/2 tablet:m-0 laptop:mr-9'>
           <Typography
             variant='h2'
-            className='title-header font-main text-second text-3xl mb-4 tablet:pt-20 tablet:text-6xl laptop:pt-10 laptop:mb-10 '>
+            className='title-header font-main text-second text-3xl mb-4 tablet:pt-20 tablet:text-6xl laptop:pt-8 laptop:mb-10 '>
             Macbook 14 Pro
           </Typography>
           <Typography

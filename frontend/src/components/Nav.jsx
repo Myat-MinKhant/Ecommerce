@@ -15,8 +15,8 @@ const Nav = () => {
 
   return (
     <>
-      <AppBar className=' nav-bar bg-main h-64 static min-w-0 tablet:h-20 laptop:h-26'>
-        <Container className=' h-full min-w-full full tablet:flex tablet:items-center tablet:justify-between laptop:justify-around'>
+      <AppBar className=' nav-bar bg-main h-64 static w-screen tablet:h-20 laptop:h-26'>
+        <Container className=' h-full w-screen tablet:flex tablet:items-center tablet:justify-between laptop:justify-around'>
           <Link to='/' className=" no-underline">
             <Typography
               component={"p"}
