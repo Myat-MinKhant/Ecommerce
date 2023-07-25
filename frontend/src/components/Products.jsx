@@ -24,7 +24,7 @@ const Products = () => {
   return (
     <>
       <Container className=" products-container h-fit">
-        <Typography className=' header font-main text-4xl mt-12 mb-2 mobile:mb-5 laptop:ml-14'>
+        <Typography className=' header font-main text-black text-4xl mt-12 mb-2 mobile:mb-5 laptop:ml-14'>
           New Arrivals
         </Typography>
         <Box
@@ -49,13 +49,13 @@ const Products = () => {
                 </Box>
               </Card>
               <Box className=' mt-2'>
-                <Typography className=' font-main text-2xl font-semibold'>
+                <Typography className=' font-main text-black text-2xl font-semibold'>
                   {product.name}
                 </Typography>
                 <Box className='mt-1 flex items-center h-15 w-48'>
                   <Typography
                     component='h2'
-                    className=' font-main w-1/3 text-xl font-extrabold'>
+                    className=' font-main text-black w-1/3 text-xl font-extrabold'>
                     ${Math.round(product.price)}
                   </Typography>
                   <Button className=' text-green-900 border-solid border-2 text-md font-bold h-5 capitalize p-5' onClick={() => dispatch(addToCart(product))}>

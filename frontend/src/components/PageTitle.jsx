@@ -34,11 +34,11 @@ const PageTitle = () => {
             life.
           </Typography>
           <Box className='mobile:flex mobile:gap-2 laptop:mb-10'>
-            <Button className=' read-more-button font-main text-second border-solid border-2 font-bold mobile:w-1/3 h-11 capitalize p-5 mr-5 mobile:text-xs mobile:p-0 mobile:mr-0 tablet:text-sm tablet:w-2/6'>
+            <Button className=' read-more-button text-second border-solid border-2 font-bold mobile:w-1/3 h-11 capitalize p-5 mr-5 mobile:text-xs mobile:p-0 mobile:mr-0 tablet:text-sm tablet:w-2/6'>
               Read more
             </Button>
             <Button
-              className='  pre-order-button font-main text-main bg-white font-bold p-5 h-11 capitalize mobile:w-2/3 mobile:text-sm tablet:text-sm tablet:w-5/12' startIcon={<ShoppingCart />}>
+              className='  pre-order-button text-main bg-second font-bold p-5 h-11 capitalize mobile:w-2/3 mobile:text-sm tablet:text-sm tablet:w-5/12' startIcon={<ShoppingCart />}>
               Pre-Order
             </Button>
           </Box>
