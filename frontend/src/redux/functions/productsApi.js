@@ -3,7 +3,9 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const getProducts = createAsyncThunk(
   "products/getProducts",
   async () => {
-    return fetch("http://localhost:5000/products").then((res) => res.json());
+    return fetch("https://ecommerce-myatminkhant.onrender.com/products").then(
+      (res) => res.json()
+    );
   }
 );
 
