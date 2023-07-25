@@ -30,9 +30,9 @@ const Search = () => {
 
     return (
         <div className='w-screen h-fit' >
-            <Container className=' px-14'>
-                <TextField fullWidth autoComplete='off' className='search-input mt-10 mobile:' size='small' placeholder='Search Product...' inputProps={{ style: { fontSize: '100%', marginLeft: '5%', } }} value={inputValue} onChange={(e) => handleChange(e.target.value)} />
-                <Box className='products-box flex flex-wrap items-center h-fit mt-10 mobile:justify-center mobile:gap-1 tablet:gap-5 tablet:justify-start laptop:gap-0  laptop:ml-14'>
+            <Container className=' px-14 laptop:px-20'>
+                <TextField fullWidth autoComplete='off' className='search-input mt-10' size='small' placeholder='Search Product...' inputProps={{ style: { fontSize: '100%', marginLeft: '5%', } }} value={inputValue} onChange={(e) => handleChange(e.target.value)} />
+                <Box className='products-box flex flex-wrap items-center h-fit mt-10 mobile:justify-center mobile:gap-1 tablet:gap-5 tablet:justify-start laptop:gap-2 '>
                     {foundProduct.map(product => (
                         <Box className=' mb-10'>
                             <Card className=' w-48 h-48 rounded-xl bg-transparent shadow-none '>
