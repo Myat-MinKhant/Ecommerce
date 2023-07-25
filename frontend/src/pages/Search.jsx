@@ -29,13 +29,13 @@ const Search = () => {
     }
 
     return (
-        <div className='w-screen h-fit'>
+        <div className='w-screen h-fit' >
             <Container className=' px-14'>
-                <TextField fullWidth autoComplete='off' className='mt-10' size='small' placeholder='Search Product...' inputProps={{ style: { fontSize: 25, marginLeft: 20 } }} value={inputValue} onChange={(e) => handleChange(e.target.value)} />
-                <Box className='flex flex-wrap w-full mt-10 pb-5'>
+                <TextField fullWidth autoComplete='off' className='search-input mt-10 mobile:' size='small' placeholder='Search Product...' inputProps={{ style: { fontSize: '100%', marginLeft: '5%', } }} value={inputValue} onChange={(e) => handleChange(e.target.value)} />
+                <Box className='products-box flex flex-wrap items-center h-fit mt-10 mobile:justify-center mobile:gap-1 tablet:gap-5 tablet:justify-start laptop:gap-0  laptop:ml-14'>
                     {foundProduct.map(product => (
                         <Box className=' mb-10'>
-                            <Card className=' w-48 h-48 rounded-xl bg-transparent '>
+                            <Card className=' w-48 h-48 rounded-xl bg-transparent shadow-none '>
                                 <Box className='flex w-full h-full bg-white relative'>
                                     <Link to={'/detail/' + product.id} onClick={() => dispatch(productDetailShow(product))} className=" m-auto"><img
                                         className=' w-25 h-28'
@@ -52,13 +52,13 @@ const Search = () => {
                                 </Box>
                             </Card>
                             <Box className=' mt-2'>
-                                <Typography className=' text-sm font-semibold'>
+                                <Typography className=' text-xl font-semibold'>
                                     {product.name}
                                 </Typography>
                                 <Box className='mt-1 flex items-center h-15'>
                                     <Typography
                                         component='h2'
-                                        className=' text-lg font-extrabold mr-5'>
+                                        className=' font-main text-lg font-extrabold mr-5'>
                                         ${product.price}
                                     </Typography>
                                     <Button className=' text-green-900 border-solid border-2 text-md font-bold w-30 h-5 capitalize p-4 mr-4'
