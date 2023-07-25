@@ -1,6 +1,5 @@
 import { Box, Card, Typography, Button, Container, Checkbox } from "@mui/material";
 import React, { useEffect } from "react";
-import { colors } from "@mui/material";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import { useSelector, useDispatch } from "react-redux";
 import { getProducts } from "../redux/functions/productsApi";
@@ -24,17 +23,17 @@ const Products = () => {
 
   return (
     <>
-      <Container className=" h-fit">
-        <Typography className=' text-4xl mt-12 mb-2 mobile:mb-5 laptop:ml-14'>
+      <Container className=" products-container h-fit">
+        <Typography className=' header font-main text-4xl mt-12 mb-2 mobile:mb-5 laptop:ml-14'>
           New Arrivals
         </Typography>
         <Box
           sx={{ height: "400px" }}
-          className='flex flex-wrap items-center h-fit mobile:justify-center mobile:gap-10 tablet:gap-5 laptop:gap-0 laptop:justify-start laptop:ml-14'>
+          className=' products-box flex flex-wrap items-center h-fit mobile:justify-center mobile:gap-1 tablet:gap-5 laptop:gap-0 laptop:justify-start laptop:ml-14'>
           {products.map((product) => (
             <Box key={product.id} className='mr-6 mb-10' >
-              <Card className=' w-48 h-48 rounded-xl bg-transparent'>
-                <Box className='flex w-full h-full bg-white relative'>
+              <Card className=' products-card w-48 h-48 rounded-xl bg-transparent shadow-none'>
+                <Box className='flex w-full h-full bg-white relative '>
                   <Link to={'/detail/' + product.id} onClick={() => dispatch(productDetailShow(product))} className=" m-auto"><img
                     className=' w-25 h-28'
                     alt='productImage'
@@ -50,13 +49,13 @@ const Products = () => {
                 </Box>
               </Card>
               <Box className=' mt-2'>
-                <Typography className=' text-lg font-semibold'>
+                <Typography className=' font-main text-2xl font-semibold'>
                   {product.name}
                 </Typography>
                 <Box className='mt-1 flex items-center h-15 w-48'>
                   <Typography
                     component='h2'
-                    className=' w-1/3 text-lg font-extrabold'>
+                    className=' font-main w-1/3 text-xl font-extrabold'>
                     ${Math.round(product.price)}
                   </Typography>
                   <Button className=' text-green-900 border-solid border-2 text-md font-bold h-5 capitalize p-5' onClick={() => dispatch(addToCart(product))}>

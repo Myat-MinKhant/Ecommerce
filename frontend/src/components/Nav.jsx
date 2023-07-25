@@ -15,36 +15,36 @@ const Nav = () => {
 
   return (
     <>
-      <AppBar className=' bg-main h-64 static min-w-0 tablet:h-20 laptop:h-26'>
+      <AppBar className=' nav-bar bg-main h-64 static min-w-0 tablet:h-20 laptop:h-26'>
         <Container className=' h-full min-w-full full tablet:flex tablet:items-center tablet:justify-between laptop:justify-around'>
           <Link to='/' className=" no-underline">
             <Typography
-              component={"span"}
-              className=' text-second text-3xl text-center my-3 tablet:text-start tablet:my-0 laptop:my-0'>
+              component={"p"}
+              className=' nav-logo text-second font-main  text-3xl my-3 text-center tablet:text-start tablet:my-0 laptop:my-0'>
               Ecommerce
             </Typography>
           </Link>
-          <Box className=' flex flex-col items-center gap-3 tablet:flex-row '>
-            <Link to='/' className=' text-third decoration-transparent laptop:mr-5'>
+          <Box className=' nav-list flex flex-col items-center gap-3 tablet:flex-row '>
+            <Link to='/' className=' nav-item text-third decoration-transparent laptop:mr-5'>
               Home
             </Link>
-            <Link to='/all-products' className=' text-third decoration-transparent laptop:mr-5'>
+            <Link to='/all-products' className=' nav-link text-third decoration-transparent laptop:mr-5'>
               All products
             </Link>
             <Link
               to='/categories'
-              className=' text-third decoration-transparent laptop:mr-5'>
+              className=' nav-link text-third decoration-transparent laptop:mr-5'>
               Categories
             </Link>
-            <Link to='/account' className=' text-third decoration-transparent laptop:mr-5'>
+            <Link to='/account' className=' nav-link text-third decoration-transparent laptop:mr-5'>
               Account
             </Link>
-            <Link to='/cart' className=' text-third decoration-transparent laptop:mr-5'>
+            <Link to='/cart' className=' nav-link text-third decoration-transparent laptop:mr-5'>
               Cart ({cartTotalQuantity})
             </Link>
           </Box>
-          <Link to='/search'>
-            <Search className=' text-black cursor-pointer bg-second min-w-full mt-4 rounded-lg tablet:min-w-fit tablet:mt-0 tablet:rounded-none tablet:bg-transparent tablet:text-third' />
+          <Link to='/search' className=" search-box">
+            <Search className=' search-button text-black cursor-pointer bg-second min-w-full mt-4 rounded-lg tablet:min-w-fit tablet:mt-0 tablet:rounded-none tablet:bg-transparent tablet:text-third' />
           </Link>
         </Container>
       </AppBar>

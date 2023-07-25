@@ -12,15 +12,20 @@ module.exports = {
     extend: {
       colors: {
         main: "#212121",
-        second: "#e0e0e0",
+        second: "#E4E4E4",
         third: "#9e9e9e",
         dark: "#000",
+        textGrey: "#6e6e73",
+        textBlack: "#1d1d1f",
       },
       minHeight: {
         not_found: "80vh",
       },
       height: {
         cart: "87.5vh",
+      },
+      fontFamily: {
+        main: "League Spartan",
       },
     },
   },
