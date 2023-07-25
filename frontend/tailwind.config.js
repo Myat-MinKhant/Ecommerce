@@ -16,6 +16,7 @@ module.exports = {
         third: "#9e9e9e",
         dark: "#000",
         black: "#1d1d1f",
+        body: "#bbbbbb",
       },
       minHeight: {
         not_found: "80vh",

@@ -20,31 +20,31 @@ const Detail = () => {
 
     return (
         <div className=' bg-second w-screen h-fit'>
-            <Container className=' px-14 pb-10'>
-                <Box className=' w-full h-fit mb-12 laptop:flex '>
-                    <Box className=' laptop:w-4/12 h-72 mt-12 mr-20 bg-white rounded-xl'>
-                        <Box className=' flex h-2/3 mt-2'>
-                            <img className=" w-5/12 h-5/6 m-auto"
+            <Container className=' px-14 mobile:py-10'>
+                <Box className=' w-full h-fit mb-16 tablet:flex tablet:gap-10'>
+                    <Box className=' bg-white mobile:w-1/2 mobile:h-fit mobile:m-auto mobile:p-5 tablet:w-4/12 h-72 mr-20 rounded-xl tablet:mt-5'>
+                        <Box className=' flex h-2/3 tablet:mt-10 '>
+                            <img className=" w-full tablet:w-5/6 laptop:w-7/12 h-5/6 m-auto "
                                 alt='productImage'
                                 src={productDetail.image}
                             />
                         </Box>
                         <Box className=' h-1/3 flex'>
-                            <Typography className=' m-auto'>More Image...</Typography>
+                            <Typography className=' m-auto mt-5 tablet:mt-5 tablet:pb-5 '>More Image...</Typography>
                         </Box>
                     </Box>
-                    <Box className=' laptop:w-7/12 mt-16'>
-                        <Typography className=' text-3xl font-extrabold mb-5'>{productDetail.name}</Typography>
-                        <Typography className=' text-lg mb-5'>{productDetail.description}</Typography>
-                        <Box className=' flex items-center gap-5'>
-                            <Typography className=' text-2xl'>${productDetail.price}</Typography>
+                    <Box className=' mobile:mt-10 tablet:w-7/12  tablet:mt-10 laptop:mt-16'>
+                        <Typography className=' font-main text-3xl font-extrabold mb-5'>{productDetail.name}</Typography>
+                        <Typography className=' font-main text-lg mb-5'>{productDetail.description}</Typography>
+                        <Box className=' flex flex-wrap  items-center justify-between tablet:justify-start tablet:flex-nowrap gap-5 tablet:gap-3'>
+                            <Typography className=' font-main  font-bold text-2xl'>${productDetail.price}</Typography>
                             <Button
-                                className=' text-white bg-green-950 h-10 font-bold capitalize w-fit px-7'
+                                className=' text-white bg-green-950 h-10 font-bold capitalize w-fit laptop:px-7 tablet:w-1/3 tablet:px-1'
                                 startIcon={<ShoppingCart />} onClick={() => dispatch(addToCart(productDetail))}>
                                 Add to cart
                             </Button>
                             <Button
-                                className=' text-white bg-yellow-700 h-10 font-bold capitalize w-fit px-7'
+                                className=' text-white bg-yellow-700 h-10 font-bold capitalize mobile:w-full tablet:w-6/12 tablet:px-1'
                                 startIcon={<AddBox />} onClick={() => dispatch(addToWishList(productDetail))}>
                                 Add to wishlist
                             </Button>
@@ -53,11 +53,11 @@ const Detail = () => {
                     </Box>
                 </Box>
 
-                <Box className=' w-full h-fit'>
-                    <Typography className=' text-2xl font-extrabold mb-5'> Reviews</Typography>
-                    <Box className=' laptop:flex laptop:gap-5 w-full mt-2'>
-                        <Box className=' laptop:w-1/2 h-fit bg-white shadow-sm px-8 py-12 rounded-xl'>
-                            <Typography className=' text-lg font-extrabold mb-5'>Add a review</Typography>
+                <Box className=' w-full h-fit mobile:pt-5'>
+                    <Typography className=' font-main text-3xl font-extrabold mb-5'> Reviews</Typography>
+                    <Box className='  tablet:flex tablet:gap-5 w-full mt-2'>
+                        <Box className=' tablet:bg-white tablet:w-1/2 h-fit  shadow-sm tablet:px-8 tablet:py-5 laptop:py-12 rounded-xl'>
+                            <Typography className=' font-main text-2xl font-extrabold tablet:mb-5 mb-3'>Add a review</Typography>
                             <Rating
                                 name="simple-controlled"
                                 className=' mb-2 text-green-950'
@@ -75,23 +75,23 @@ const Detail = () => {
                                     variant="outlined" multiline
                                     rows={2} size='small' placeholder='Was it good? Pros? Cons?' className=' w-full' />
                             </Box>
-                            <Button className='laptop:w-1/2 bg-green-950 rounded-md' size='large'>
+                            <Button className='w-full laptop:w-2/3 bg-green-950 rounded-md' size='large'>
                                 <Typography component={'p'} className=' text-md capitalize tracking-widest text-white'>Submit your review</Typography>
                             </Button>
                         </Box>
-                        <Box className=' laptop:w-1/2 h-fit bg-white shadow-sm px-10 py-12 rounded-xl'>
-                            <Typography className=' text-lg font-extrabold mb-5'>All review</Typography>
+                        <Box className='w-full my-5 py-5 tablet:w-1/2 h-fit tablet:bg-white shadow-sm tablet:px-5 laptop:px-10 tablet:py-5 laptop:py-12 tablet:my-0 rounded-xl'>
+                            <Typography className='font-main text-2xl font-extrabold mb-5'>All review</Typography>
                             <Divider className=' bg-second' />
 
                             <List className='w-full'>
                                 <Box className=' w-full'>
-                                    <Box className=' flex items-center justify-between'>
+                                    <Box className=' tablet:flex tablet:items-center tablet:justify-between'>
                                         <Rating name="read-only"
                                             className=' mb-2 text-green-950'
                                             value={2}
                                             readOnly
                                         />
-                                        <Typography component={'span'} className=' text-end text-sm text-third font-bold'>2023-04-06 17:35:38</Typography>
+                                        <Typography component={'p'} className=' tablet:text-end text-sm text-third font-bold'>2023-04-06 17:35:38</Typography>
                                     </Box>
                                     <Box className='w-full'>
                                         <Typography className=' text-lg '>Slow delivery! :( </Typography>
@@ -102,13 +102,13 @@ const Detail = () => {
                             </List>
                             <List className='w-full'>
                                 <Box className=' w-full'>
-                                    <Box className=' flex items-center justify-between'>
+                                    <Box className=' tablet:flex tablet:items-center tablet:justify-between'>
                                         <Rating name="read-only"
                                             className=' mb-2 text-green-950'
                                             value={5}
                                             readOnly
                                         />
-                                        <Typography component={'span'} className=' text-end text-sm text-third font-bold'>2023-04-06 15:20:02</Typography>
+                                        <Typography component={'p'} className=' tablet:text-end text-sm text-third font-bold'>2023-04-06 15:20:02</Typography>
                                     </Box>
                                     <Box className='w-full'>
                                         <Typography className=' text-lg '>Really good! </Typography>
@@ -119,13 +119,13 @@ const Detail = () => {
                             </List>
                             <List className='w-full'>
                                 <Box className=' w-full'>
-                                    <Box className=' flex items-center justify-between'>
+                                    <Box className=' tablet:flex tablet:items-center tablet:justify-between'>
                                         <Rating name="read-only"
                                             className=' mb-2 text-green-950'
                                             value={3}
                                             readOnly
                                         />
-                                        <Typography component={'span'} className=' text-end text-sm text-third font-bold'>2022-12-20 12:58:56</Typography>
+                                        <Typography component={'p'} className=' tablet:text-end text-sm text-third font-bold'>2022-12-20 12:58:56</Typography>
                                     </Box>
                                     <Box className='w-full'>
                                         <Typography className=' text-lg '>Nice! </Typography>
