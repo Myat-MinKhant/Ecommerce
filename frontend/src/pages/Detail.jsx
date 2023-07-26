@@ -56,7 +56,7 @@ const Detail = () => {
                 <Box className=' w-full h-fit mobile:pt-5'>
                     <Typography className=' font-main text-3xl font-extrabold mb-5'> Reviews</Typography>
                     <Box className='  tablet:flex tablet:gap-5 w-full mt-2'>
-                        <Box className=' tablet:bg-white tablet:w-1/2 h-fit  shadow-sm tablet:px-8 tablet:py-5 laptop:py-12 rounded-xl'>
+                        <Box className=' tablet:bg-white tablet:w-1/2 h-fit shadow-none tablet:shadow-sm tablet:px-8 tablet:py-5 laptop:py-12 rounded-xl'>
                             <Typography className=' font-main text-2xl font-extrabold tablet:mb-5 mb-3'>Add a review</Typography>
                             <Rating
                                 name="simple-controlled"
@@ -79,7 +79,7 @@ const Detail = () => {
                                 <Typography component={'p'} className=' text-md capitalize tracking-widest text-white'>Submit your review</Typography>
                             </Button>
                         </Box>
-                        <Box className='w-full my-5 py-5 tablet:w-1/2 h-fit tablet:bg-white shadow-sm tablet:px-5 laptop:px-10 tablet:py-5 laptop:py-12 tablet:my-0 rounded-xl'>
+                        <Box className='w-full my-5 py-5 tablet:w-1/2 h-fit shadow-none tablet:bg-white tablet:shadow-sm tablet:px-5 laptop:px-10 tablet:py-5 laptop:py-12 tablet:my-0 rounded-xl'>
                             <Typography className='font-main text-2xl font-extrabold mb-5'>All review</Typography>
                             <Divider className=' bg-second' />
 
