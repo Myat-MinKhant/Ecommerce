@@ -1,17 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Container, Typography, Box, Card, Button } from "@mui/material";
-import { Favorite, ArrowRightAlt } from '@mui/icons-material'
+import { Favorite, ArrowRightAlt, Sync } from '@mui/icons-material'
+import { useSelector, useDispatch } from "react-redux";
+import { getProducts } from "../redux/functions/productsApi";
 
 const Categories = () => {
+  const { products } = useSelector(state => state.products)
+  const { wishListItems } = useSelector(state => state.wishListItems)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getProducts())
+  }, [])
+
+  function test() {
+    const array = products.map(product => product)
+    console.log(array);
+  }
+  test();
+
   return (
     <div className='bg-second w-screen h-fit'>
       <Container className="pt-5">
         <Box className='flex items-end'>
           <Typography component={"p"} className=' text-3xl font-extrabold laptop:ml-7'>
-            Mobiles
+            iPhones
           </Typography>
-          <Link className=' text-gray-700 text-lg ml-3'>Show all</Link>
         </Box>
 
         <Box
