@@ -122,7 +122,7 @@ const products = [
       "The Apple Pencil 2 does actually have one technical advantage, but it's not directly to do with drawing: it has a button. It's not a physical button, but rather you can double-tap the flat edge with your finger.",
     price: 129,
     image:
-      "https://ik.imagekit.io/tg4ejl7pe/Ecommerce/image/Apple%20Pencil%20(2nd%20Generation).png?updatedAt=1690826443114",
+      "https://ik.imagekit.io/tg4ejl7pe/Ecommerce/image/Apple%20Pencil%202?updatedAt=1690828350076",
   },
   {
     id: 15,
