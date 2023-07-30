@@ -60,7 +60,7 @@ const products = [
     description: 'In 2023, Apple switched the Mac Pro from Intel to its own silicon. The current-generation Mac Pro is based on the 24-core M2 Ultra chip and supports up to 76 GPU cores, 192GB of unified memory and 8TB of solid state storage. For expansion, the Mac Pro has six PCI Express slots.',
     price: 1299,
     image:
-      "https://ik.imagekit.io/tg4ejl7pe/Ecommerce/image/MacBook%20Pro%2013'.jpg?updatedAt=1690770728653",
+      "https://ik.imagekit.io/tg4ejl7pe/Ecommerce/image/594255-Product-0-I-637901949777334327.jpg_v=1655873751?updatedAt=1690828953128",
   },
   {
     id: 8,

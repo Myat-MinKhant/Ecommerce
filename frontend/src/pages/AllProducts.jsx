@@ -1,5 +1,5 @@
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
-import { Box, Button, Card, Container, Typography,  Checkbox } from '@mui/material'
+import { Box, Button, Card, Container, Typography, Checkbox } from '@mui/material'
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getProducts } from '../redux/functions/productsApi'
@@ -32,7 +32,7 @@ const AllProducts = () => {
             <Box className=' tablet:mb-5 laptop:mb-8'>
               <Card className=' w-48 h-48 shadow-none rounded-xl bg-transparent '>
                 <Box className='flex w-full h-full bg-white relative'>
-                  <Link to={'/detail/'+ product.id} onClick={() => dispatch(productDetailShow(product))} className=" m-auto"><img
+                  <Link to={'/detail/' + product.id} onClick={() => dispatch(productDetailShow(product))} className=" m-auto"><img
                     className=' w-25 h-28'
                     alt='productImage'
                     src={product.image}
