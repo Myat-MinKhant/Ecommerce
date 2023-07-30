@@ -81,7 +81,7 @@ const products = [
   },
   {
     id: 10,
-    name: "Apple Watch Series 3",
+    name: "Apple Watch 3",
     description:
       "Apple Watch Series 3 comes in two models, one with GPS and cellular, and one with GPS, both featuring a 70 percent faster dual-core processor and new wireless chip. Apple Watch Series 3 features a faster dual-core processor and wireless chip.",
     price: 299,
@@ -90,7 +90,7 @@ const products = [
   },
   {
     id: 11,
-    name: "Apple Watch Series 7",
+    name: "Apple Watch 7",
     description:
       "Apple Watch Series 7 is the most durable Apple Watch ever built. Fundamental design changes were needed to achieve the vision of the larger Always-On Retina display. These same innovations also helped make the most crack-resistant front crystal yet. Crack ResistantOur strongest front crystal ever.",
     price: 399,
@@ -99,7 +99,7 @@ const products = [
   },
   {
     id: 12,
-    name: "Airpod Pro (2nd Generation)",
+    name: "Airpod Pro 2",
     description:
       "They will belong to either the AirPods (3rd Generation) or the AirPods Pro. However, the AirPods Pro (2nd generation) is easier to spot as its MagSafe Charging Case, in particular, has a lanyard loop on the side and speakers at the bottom.",
     price: 249,
@@ -117,12 +117,12 @@ const products = [
   },
   {
     id: 14,
-    name: "Apple Pencil (2nd Generation)",
+    name: "Apple Pencil 2",
     description:
       "The Apple Pencil 2 does actually have one technical advantage, but it's not directly to do with drawing: it has a button. It's not a physical button, but rather you can double-tap the flat edge with your finger.",
     price: 129,
     image:
-      "https://ik.imagekit.io/tg4ejl7pe/Ecommerce/image/Apple%20Pencil%20(2nd%20Generation).png?updatedAt=1690770740101",
+      "https://ik.imagekit.io/tg4ejl7pe/Ecommerce/image/Apple%20Pencil%20(2nd%20Generation).png?updatedAt=1690826443114",
   },
   {
     id: 15,
