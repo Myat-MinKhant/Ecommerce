@@ -53,9 +53,88 @@ const products = [
     image:
       "https://ik.imagekit.io/tg4ejl7pe/Ecommerce/image/MacBook_Air_15_.png?updatedAt=1689771901267",
   },
+  // edit from here
+  {
+    id: 7,
+    name: "MacBook Pro 13″",
+    description: 'In 2023, Apple switched the Mac Pro from Intel to its own silicon. The current-generation Mac Pro is based on the 24-core M2 Ultra chip and supports up to 76 GPU cores, 192GB of unified memory and 8TB of solid state storage. For expansion, the Mac Pro has six PCI Express slots.',
+    price: 1299,
+    image:
+      "https://ik.imagekit.io/tg4ejl7pe/Ecommerce/image/MacBook%20Pro%2013'.jpg?updatedAt=1690770728653",
+  },
+  {
+    id: 8,
+    name: "iPad Pro 11″",
+    description: 'iPad makes editing, enjoying, and sharing your photos and videos easy. Capture the perfect shot and make it your own with a suite of powerful built‑in or third‑party editing apps. And use Final Cut Pro for iPad to shoot, edit, finish, and deliver professional videos anywhere you are.',
+    price: 799,
+    image:
+      "https://ik.imagekit.io/tg4ejl7pe/Ecommerce/image/iPad%20Pro%2011'.jpg?updatedAt=1690770740104",
+  },
+  {
+    id: 9,
+    name: "iPad Air 4",
+    description:
+      'The device closely resembles the design of the 11-inch iPad Pro (3rd generation) and has several features that were previously exclusive to the iPad Pro line, such as support for Magic Keyboard and the second-generation Apple Pencil. It is available in five colors: Space Gray, Silver, Rose Gold, Green, and Sky Blue.',
+    price: 599,
+    image:
+      "https://ik.imagekit.io/tg4ejl7pe/Ecommerce/image/iPad%20Air%204.png?updatedAt=1690770750887",
+  },
+  {
+    id: 10,
+    name: "Apple Watch Series 3",
+    description:
+      "Apple Watch Series 3 comes in two models, one with GPS and cellular, and one with GPS, both featuring a 70 percent faster dual-core processor and new wireless chip. Apple Watch Series 3 features a faster dual-core processor and wireless chip.",
+    price: 299,
+    image:
+      "https://ik.imagekit.io/tg4ejl7pe/Ecommerce/image/Apple%20Watch%20Series%203.webp?updatedAt=1690770734391",
+  },
+  {
+    id: 11,
+    name: "Apple Watch Series 7",
+    description:
+      "Apple Watch Series 7 is the most durable Apple Watch ever built. Fundamental design changes were needed to achieve the vision of the larger Always-On Retina display. These same innovations also helped make the most crack-resistant front crystal yet. Crack ResistantOur strongest front crystal ever.",
+    price: 399,
+    image:
+      "https://ik.imagekit.io/tg4ejl7pe/Ecommerce/image/Apple%20Watch%20Series%207.webp?updatedAt=1690770744441",
+  },
+  {
+    id: 12,
+    name: "Airpod Pro (2nd Generation)",
+    description:
+      "They will belong to either the AirPods (3rd Generation) or the AirPods Pro. However, the AirPods Pro (2nd generation) is easier to spot as its MagSafe Charging Case, in particular, has a lanyard loop on the side and speakers at the bottom.",
+    price: 249,
+    image:
+      "https://ik.imagekit.io/tg4ejl7pe/Ecommerce/image/Airpod%20Pro%20(2nd%20generation).jpg?updatedAt=1690770740501",
+  },
+  {
+    id: 13,
+    name: "Airpod Max",
+    description:
+      "AirPods Max combine high-fidelity audio with industry-leading Active Noise Cancellation to deliver an unparalleled listening experience. Each part of their custom-built driver works to produce sound with ultra-low distortion across the audible range.",
+    price: 549,
+    image:
+      "https://ik.imagekit.io/tg4ejl7pe/Ecommerce/image/Airpod%20Max.jpg?updatedAt=1690770745257",
+  },
+  {
+    id: 14,
+    name: "Apple Pencil (2nd Generation)",
+    description:
+      "The Apple Pencil 2 does actually have one technical advantage, but it's not directly to do with drawing: it has a button. It's not a physical button, but rather you can double-tap the flat edge with your finger.",
+    price: 129,
+    image:
+      "https://ik.imagekit.io/tg4ejl7pe/Ecommerce/image/Apple%20Pencil%20(2nd%20Generation).png?updatedAt=1690770740101",
+  },
+  {
+    id: 15,
+    name: "Apple Magic Mouse",
+    description:
+      "Overview. Magic Mouse is wireless and rechargeable, with an optimized foot design that lets it glide smoothly across your desk. The Multi-Touch surface allows you to perform simple gestures such as swiping between web pages and scrolling through documents.",
+    price: 99,
+    image:
+      "https://ik.imagekit.io/tg4ejl7pe/Ecommerce/image/Apple%20Magic%20Mouse.jpg?updatedAt=1690770735577",
+  },
 ];
 
 module.exports = products;
 
-// imagekit.io url
-// https://ik.imagekit.io/tg4ejl7pe/path/to/myimage.jpg
+
