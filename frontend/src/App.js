@@ -15,9 +15,12 @@ import Account from "./pages/Account";
 import Search from "./pages/Search";
 import ScrollToTop from "./utils/scrollToTop";
 import { useSelector } from "react-redux";
+import ShowAll from "./pages/ShowAll";
 
 function App() {
   const { productDetail } = useSelector((state) => state.productDetail);
+  const { showAllProduct } = useSelector(state => state.showAllProduct)
+
   return (
     <Router>
       <ScrollToTop />
@@ -28,6 +31,7 @@ function App() {
         <Route path='/' exact element={<Home />} />
         <Route path='/all-products' exact element={<AllProducts />} />
         <Route path='/categories' element={<Categories />} />
+        <Route path={'/categories/' + showAllProduct.title} element={<ShowAll />} />
         <Route path='/account' element={<Account />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/search' element={<Search />} />

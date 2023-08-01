@@ -7,6 +7,7 @@ import { addToCart } from '../redux/functions/cartSlice'
 import { addToWishList } from '../redux/functions/wishListSlice'
 import { productDetailShow } from '../redux/functions/productDetailSlice'
 import { getCategories } from "../redux/functions/categoriesApi";
+import { showAllProduct } from "../redux/functions/ShowAllProductSlice";
 
 const Categories = () => {
   const { categories } = useSelector(state => state.categories)
@@ -20,7 +21,7 @@ const Categories = () => {
   return (
     <div className='bg-second w-screen h-fit'>
       {categories.map(category => (
-        <Container className=" pt-5 px-14">
+        <Container className=" pt-5 px-14" key={category.id}>
           <Box className=' mt-5'>
             <Typography component={"p"} className=' text-3xl mb-5 font-extrabold laptop:ml-7'>
               {category.title}
@@ -28,7 +29,7 @@ const Categories = () => {
             <Box sx={{ height: "300px" }}
               className='flex flex-wrap gap-5 items-center mobile:justify-center mobile:gap-10 tablet:gap-5 laptop:gap-0 tablet:justify-start laptop:ml-7'>
               {category.products.slice(0, 4).map(product => (
-                <Box className=' tablet:mb-5 laptop:mb-8'>
+                <Box className=' tablet:mb-5 laptop:mb-8' key={product.id}>
                   <Card className=' w-48 h-48 shadow-none rounded-xl bg-transparent '>
                     <Box className='flex w-full h-full bg-white relative'>
                       <Link to={'/detail/' + product.id} onClick={() => dispatch(productDetailShow(product))} className=" m-auto"><img
@@ -55,7 +56,7 @@ const Categories = () => {
                         className=' font-main text-xl font-extrabold mr-5'>
                         ${product.price}
                       </Typography>
-                      <Button className=' text-green-900 border-solid border-2 text-md font-bold w-30 h-5 capitalize p-4 mr-5'
+                      <Button className=' text-green-900 border-solid border-2 text-md font-bold w-30 h-5 capitalize p-4 tablet:mr-3 laptop:mr-5'
                         onClick={() => dispatch(addToCart(product))}>
                         Add to cart
                       </Button>
@@ -64,7 +65,7 @@ const Categories = () => {
                 </Box>
               ))}
               <Card className=' w-48 h-48 mb-28 rounded-xl bg-gray-300 shadow-none flex items-center justify-center ml-3'>
-                <Link className="text-gray-700 text-lg no-underline" >
+                <Link to={'/categories/' + category.title} onClick={() => dispatch(showAllProduct(category))} className="text-gray-700 text-lg no-underline" >
                   Show all
                 </Link>
                 <ArrowRightAlt className="text-gray-600" />
