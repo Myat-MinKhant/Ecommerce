@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const products = require("./products");
+const categories = require("./categories");
 
 const app = express();
 
@@ -14,6 +15,10 @@ app.get("/", (req, res) => {
 app.get("/products", (req, res) => {
   res.send(products);
 });
+
+app.get('/products/categories',(req, res) => {
+  res.send(categories);
+})
 
 const port = process.env.PORT || 5000;
 
