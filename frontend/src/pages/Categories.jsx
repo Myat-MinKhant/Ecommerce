@@ -8,190 +8,142 @@ import { getProducts } from "../redux/functions/productsApi";
 const Categories = () => {
   const { products } = useSelector(state => state.products)
   const { wishListItems } = useSelector(state => state.wishListItems)
+  const { showMore } = useSelector(state => state.showMore)
   const dispatch = useDispatch()
+  // const initialProducts = products.slice( 0, showMore.index)
 
   useEffect(() => {
     dispatch(getProducts())
   }, [])
 
   function test() {
-    const array = products.map(product => product)
+    const array = products.map(product => product.categories.iphone.slice(0, 4))
     console.log(array);
   }
   test();
 
+  // console.log(initialProducts);
+
   return (
     <div className='bg-second w-screen h-fit'>
-      <Container className="pt-5">
-        <Box className='flex items-end'>
-          <Typography component={"p"} className=' text-3xl font-extrabold laptop:ml-7'>
-            iPhones
-          </Typography>
-        </Box>
+      {products.map(product => (
+        <Container className=" mt-5">
+          <Box className='flex items-end'>
+            <Typography component={"p"} className=' text-3xl font-extrabold laptop:ml-7'>
+              iPhones
+            </Typography>
+          </Box>
+          <Box
+            sx={{ height: "300px" }}
+            className='flex flex-wrap gap-5 items-center mobile:justify-center mobile:gap-10 tablet:gap-5 laptop:gap-0 tablet:justify-start laptop:ml-7'>
+            {product.categories.iphone.slice(0, 4).map(item => (
+              <Box key={item.id}>
+                <Card className=' w-48 h-48 rounded-xl bg-transparent' >
+                  <Box className='flex w-full h-full bg-white relative'>
+                    <img
+                      className=' w-25 h-28 m-auto'
+                      alt={item.name}
+                      src={item.image}
+                    />
+                    <Favorite className=' absolute top-2 left-40 text-red-600' />
+                  </Box>
+                </Card>
+                <Box className=' mt-2'>
+                  <Typography className=' text-sm font-semibold'>
+                    {item.name}
+                  </Typography>
+                  <Box className='mt-1 flex items-center h-15'>
+                    <Typography
+                      component='h2'
+                      className=' text-lg font-extrabold mr-5'>
+                      ${item.price}
+                    </Typography>
+                    <Button className=' text-green-900 border-solid border-2 text-md font-bold w-30 h-5 capitalize p-4 mr-5'>
+                      Add to cart
+                    </Button>
+                  </Box>
+                </Box>
+              </Box>
+            ))}
+              <Link className="text-gray-700 text-lg no-underline" >
+                Show all
+                <ArrowRightAlt className="text-gray-600" />
+              </Link>
+            </Card>
+          </Box>
+          <Box className='flex items-end'>
+            <Typography component={"p"} className=' text-3xl font-extrabold laptop:ml-7'>
+              Headphones
+            </Typography>
+            <Link className=' text-gray-700 text-lg ml-3'>Show all</Link>
+          </Box>
 
-        <Box
-          sx={{ height: "300px" }}
-          className='flex flex-wrap gap-5 items-center mobile:justify-center mobile:gap-10 tablet:gap-5 laptop:gap-0 laptop:justify-start laptop:ml-7'>
-          <Box>
-            <Card className=' w-48 h-48 rounded-xl bg-transparent'>
-              <Box className='flex w-full h-full bg-white relative'>
-                <img
-                  className=' w-25 h-28 m-auto'
-                  alt=''
-                  src='https://m.media-amazon.com/images/I/51KFr6xZHhL._AC_UF894,1000_QL80_.jpg'
-                />
-                <Favorite className=' absolute top-2 left-40 text-red-600' />
-              </Box>
-            </Card>
-            <Box className=' mt-2'>
-              <Typography className=' text-sm font-semibold'>
-                Xiaomi Redmi Note 11
-              </Typography>
-              <Box className='mt-1 flex items-center h-15'>
-                <Typography
-                  component='h2'
-                  className=' text-lg font-extrabold mr-5'>
-                  $899
+          <Box
+            sx={{ height: "300px" }}
+            className='flex flex-wrap gap-5 items-center mobile:justify-center mobile:gap-10 tablet:gap-5 laptop:gap-0 laptop:justify-start laptop:ml-7'>
+            <Box>
+              <Card className=' w-48 h-48 rounded-xl bg-transparent'>
+                <Box className='flex w-full h-full bg-white relative'>
+                  <img
+                    className=' w-25 h-28 m-auto'
+                    alt=''
+                    src='https://m.media-amazon.com/images/I/51KFr6xZHhL._AC_UF894,1000_QL80_.jpg'
+                  />
+                  <Favorite className=' absolute top-2 left-40 text-red-600' />
+                </Box>
+              </Card>
+              <Box className=' mt-2'>
+                <Typography className=' text-sm font-semibold'>
+                  Xiaomi Redmi Note 11
                 </Typography>
-                <Button className=' text-green-900 border-solid border-2 text-md font-bold w-30 h-5 capitalize p-4 mr-5'>
-                  Add to cart
-                </Button>
+                <Box className='mt-1 flex items-center h-15'>
+                  <Typography
+                    component='h2'
+                    className=' text-lg font-extrabold mr-5'>
+                    $899
+                  </Typography>
+                  <Button className=' text-green-900 border-solid border-2 text-md font-bold w-30 h-5 capitalize p-4 mr-5'>
+                    Add to cart
+                  </Button>
+                </Box>
               </Box>
             </Box>
-          </Box>
-          <Box>
-            <Card className=' w-48 h-48 rounded-xl bg-transparent'>
-              <Box className='flex w-full h-full bg-white relative'>
-                <img
-                  className=' w-25 h-28 m-auto'
-                  alt=''
-                  src='https://m.media-amazon.com/images/I/51KFr6xZHhL._AC_UF894,1000_QL80_.jpg'
-                />
-                <Favorite className=' absolute top-2 left-40 text-red-600' />
-              </Box>
-            </Card>
-            <Box className=' mt-2'>
-              <Typography className=' text-sm font-semibold'>
-                Xiaomi Redmi Note 11
-              </Typography>
-              <Box className='mt-1 flex items-center h-15'>
-                <Typography
-                  component='h2'
-                  className=' text-lg font-extrabold mr-5'>
-                  $899
+            <Box>
+              <Card className=' w-48 h-48 rounded-xl bg-transparent'>
+                <Box className='flex w-full h-full bg-white relative'>
+                  <img
+                    className=' w-25 h-28 m-auto'
+                    alt=''
+                    src='https://m.media-amazon.com/images/I/51KFr6xZHhL._AC_UF894,1000_QL80_.jpg'
+                  />
+                  <Favorite className=' absolute top-2 left-40 text-red-600' />
+                </Box>
+              </Card>
+              <Box className=' mt-2'>
+                <Typography className=' text-sm font-semibold'>
+                  Xiaomi Redmi Note 11
                 </Typography>
-                <Button className=' text-green-900 border-solid border-2 text-md font-bold w-30 h-5 capitalize p-4 mr-5'>
-                  Add to cart
-                </Button>
+                <Box className='mt-1 flex items-center h-15'>
+                  <Typography
+                    component='h2'
+                    className=' text-lg font-extrabold mr-5'>
+                    $899
+                  </Typography>
+                  <Button className=' text-green-900 border-solid border-2 text-md font-bold w-30 h-5 capitalize p-4 mr-5'>
+                    Add to cart
+                  </Button>
+                </Box>
               </Box>
             </Box>
-          </Box>
-          <Box>
-            <Card className=' w-48 h-48 rounded-xl bg-transparent'>
-              <Box className='flex w-full h-full bg-white relative'>
-                <img
-                  className=' w-25 h-28 m-auto'
-                  alt=''
-                  src='https://m.media-amazon.com/images/I/51KFr6xZHhL._AC_UF894,1000_QL80_.jpg'
-                />
-                <Favorite className=' absolute top-2 left-40 text-red-600' />
-              </Box>
+            <Card className=' w-48 h-48 rounded-xl bg-gray-300 mb-16 shadow-none flex justify-center items-center'>
+              <Link className="text-gray-700 text-lg no-underline" >Show all</Link>
+              <ArrowRightAlt className="text-gray-600" />
             </Card>
-            <Box className=' mt-2'>
-              <Typography className=' text-sm font-semibold'>
-                Xiaomi Redmi Note 11
-              </Typography>
-              <Box className='mt-1 flex items-center h-15'>
-                <Typography
-                  component='h2'
-                  className=' text-lg font-extrabold mr-5'>
-                  $899
-                </Typography>
-                <Button className=' text-green-900 border-solid border-2 text-md font-bold w-30 h-5 capitalize p-4 mr-5'>
-                  Add to cart
-                </Button>
-              </Box>
-            </Box>
           </Box>
-          <Card className=' w-48 h-48 rounded-xl bg-gray-300 mb-16 shadow-none flex justify-center items-center'>
-            <Link className="text-gray-700 text-lg no-underline" >Show all</Link>
-            <ArrowRightAlt className="text-gray-600" />
-          </Card>
-        </Box>
-      </Container>
-      <Container className="pt-16">
-        <Box className='flex items-end'>
-          <Typography component={"p"} className=' text-3xl font-extrabold laptop:ml-7'>
-            Headphones
-          </Typography>
-          <Link className=' text-gray-700 text-lg ml-3'>Show all</Link>
-        </Box>
-
-        <Box
-          sx={{ height: "300px" }}
-          className='flex flex-wrap gap-5 items-center mobile:justify-center mobile:gap-10 tablet:gap-5 laptop:gap-0 laptop:justify-start laptop:ml-7'>
-          <Box>
-            <Card className=' w-48 h-48 rounded-xl bg-transparent'>
-              <Box className='flex w-full h-full bg-white relative'>
-                <img
-                  className=' w-25 h-28 m-auto'
-                  alt=''
-                  src='https://m.media-amazon.com/images/I/51KFr6xZHhL._AC_UF894,1000_QL80_.jpg'
-                />
-                <Favorite className=' absolute top-2 left-40 text-red-600' />
-              </Box>
-            </Card>
-            <Box className=' mt-2'>
-              <Typography className=' text-sm font-semibold'>
-                Xiaomi Redmi Note 11
-              </Typography>
-              <Box className='mt-1 flex items-center h-15'>
-                <Typography
-                  component='h2'
-                  className=' text-lg font-extrabold mr-5'>
-                  $899
-                </Typography>
-                <Button className=' text-green-900 border-solid border-2 text-md font-bold w-30 h-5 capitalize p-4 mr-5'>
-                  Add to cart
-                </Button>
-              </Box>
-            </Box>
-          </Box>
-          <Box>
-            <Card className=' w-48 h-48 rounded-xl bg-transparent'>
-              <Box className='flex w-full h-full bg-white relative'>
-                <img
-                  className=' w-25 h-28 m-auto'
-                  alt=''
-                  src='https://m.media-amazon.com/images/I/51KFr6xZHhL._AC_UF894,1000_QL80_.jpg'
-                />
-                <Favorite className=' absolute top-2 left-40 text-red-600' />
-              </Box>
-            </Card>
-            <Box className=' mt-2'>
-              <Typography className=' text-sm font-semibold'>
-                Xiaomi Redmi Note 11
-              </Typography>
-              <Box className='mt-1 flex items-center h-15'>
-                <Typography
-                  component='h2'
-                  className=' text-lg font-extrabold mr-5'>
-                  $899
-                </Typography>
-                <Button className=' text-green-900 border-solid border-2 text-md font-bold w-30 h-5 capitalize p-4 mr-5'>
-                  Add to cart
-                </Button>
-              </Box>
-            </Box>
-          </Box>
-          <Card className=' w-48 h-48 rounded-xl bg-gray-300 mb-16 shadow-none flex justify-center items-center'>
-            <Link className="text-gray-700 text-lg no-underline" >Show all</Link>
-            <ArrowRightAlt className="text-gray-600" />
-          </Card>
-        </Box>
-      </Container>
-
-    </div>
+        </Container>
+      ))
+      }
+    </div >
   );
 };
 
