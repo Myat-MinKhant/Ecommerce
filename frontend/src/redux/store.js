@@ -3,6 +3,7 @@ import productsReducer from "./functions/productsApi";
 import cartReducer from "./functions/cartSlice";
 import wishListReducer from "./functions/wishListSlice";
 import productDetailReducer from "./functions/productDetailSlice";
+import showMoreReducer from "./functions/showAllSlice";
 
 export default configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export default configureStore({
     cartItems: cartReducer,
     wishListItems: wishListReducer,
     productDetail: productDetailReducer,
+    showMore: showMoreReducer,
   },
 });
