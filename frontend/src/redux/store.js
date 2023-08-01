@@ -4,6 +4,7 @@ import cartReducer from "./functions/cartSlice";
 import wishListReducer from "./functions/wishListSlice";
 import productDetailReducer from "./functions/productDetailSlice";
 import showMoreReducer from "./functions/showAllSlice";
+import categoriesReducer from './functions/categoriesApi'
 
 export default configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export default configureStore({
     cartItems: cartReducer,
     wishListItems: wishListReducer,
     productDetail: productDetailReducer,
+    categories: categoriesReducer,
     showMore: showMoreReducer,
   },
 });
