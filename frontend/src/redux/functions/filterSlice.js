@@ -1,16 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    filterProduct: {},
+    filterResult: {},
 };
 
 export const filterSlice = createSlice({
-    name: 'filterProduct',
+    name: 'filterResult',
     initialState,
     reducers: {
         filter: (state, action) => {
-            state.filterProduct = { ...action.payload }
-            console.log(state.filterProduct);
+            const { value, list } = action.payload;
+            state.filterResult = [...list];
+            const result = state.filterResult.filter(product => product.color === value.toLowerCase())
+            console.log(result);
+            console.log(state.filterResult);
         }
     },
 })

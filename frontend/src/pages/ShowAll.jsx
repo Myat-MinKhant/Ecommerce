@@ -31,12 +31,12 @@ function ShowAll() {
                             <FormControl sx={{
                                 "& fieldset": { border: 'none' },
                             }} size='small' className='h-10 bg-gray-300 border-0 rounded-lg outline-none w-36' >
-                                <Select value={'All'}  onChange={() => dispatch(filter(category))}>
-                                {colors.current.map(color => (
-                                    <MenuItem value={color}>
-                                        <Typography>color: {color}</Typography>
-                                    </MenuItem>
-                                ))}
+                                <Select onChange={(e) => dispatch(filter({value: e.target.value,list: category.products}))}>
+                                    {colors.current.map(color => (
+                                        <MenuItem value={color} >
+                                            <Typography>color: {color}</Typography>
+                                        </MenuItem>
+                                    ))}
                                 </Select>
                             </FormControl>
                             {/* <FormControl sx={{
