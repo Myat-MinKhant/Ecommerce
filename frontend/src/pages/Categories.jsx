@@ -16,29 +16,29 @@ const Categories = () => {
 
   useEffect(() => {
     dispatch(getCategories())
-  }, [])
+  }, [dispatch])
 
   return (
-    <div className='bg-second w-screen h-fit'>
+    <div className='w-screen bg-second h-fit'>
       {categories.map(category => (
-        <Container className=" pt-5 px-14" key={category.id}>
-          <Box className=' mt-5'>
-            <Typography component={"p"} className=' text-3xl mb-5 font-extrabold laptop:ml-7'>
+        <Container className="pt-5 px-14" key={category.id}>
+          <Box className='mt-5 '>
+            <Typography component={"p"} className='mb-5 text-3xl font-extrabold laptop:ml-7'>
               {category.title}
             </Typography>
             <Box sx={{ height: "300px" }}
-              className='flex flex-wrap gap-5 items-center mobile:justify-center mobile:gap-10 tablet:gap-5 laptop:gap-0 tablet:justify-start laptop:ml-7'>
+              className='flex flex-wrap items-center gap-5 mobile:justify-center mobile:gap-10 tablet:gap-5 laptop:gap-0 tablet:justify-start laptop:ml-7'>
               {category.products.slice(0, 4).map(product => (
                 <Box className=' tablet:mb-5 laptop:mb-8' key={product.id}>
-                  <Card className=' w-48 h-48 shadow-none rounded-xl bg-transparent '>
-                    <Box className='flex w-full h-full bg-white relative'>
-                      <Link to={'/detail/' + product.id} onClick={() => dispatch(productDetailShow(product))} className=" m-auto"><img
+                  <Card className='w-48 h-48 bg-transparent shadow-none rounded-xl'>
+                    <Box className='relative flex w-full h-full bg-white'>
+                      <Link to={'/detail/' + product.id} onClick={() => dispatch(productDetailShow(product))} className="m-auto "><img
                         className=' w-25 h-28'
                         alt='productImage'
                         src={product.image}
                       /></Link>
                       <Checkbox
-                        className=' absolute top-0 right-0'
+                        className='absolute top-0 right-0 '
                         onClick={() => dispatch(addToWishList(product))}
                         icon={<FavoriteBorder />}
                         checkedIcon={<Favorite sx={{ color: 'red' }} />}
@@ -46,17 +46,17 @@ const Categories = () => {
                       />
                     </Box>
                   </Card>
-                  <Box className=' mt-2'>
-                    <Typography className=' font-main text-2xl font-semibold'>
+                  <Box className='mt-2 '>
+                    <Typography className='text-2xl font-semibold font-main'>
                       {product.name}
                     </Typography>
-                    <Box className='mt-1 flex items-center h-15'>
+                    <Box className='flex items-center mt-1 h-15'>
                       <Typography
                         component='h2'
-                        className=' font-main text-xl font-extrabold mr-5'>
+                        className='mr-5 text-xl font-extrabold font-main'>
                         ${product.price}
                       </Typography>
-                      <Button className=' text-green-900 border-solid border-2 text-md font-bold w-30 h-5 capitalize p-4 tablet:mr-3 laptop:mr-5'
+                      <Button className='h-5 p-4 font-bold text-green-900 capitalize border-2 border-solid text-md w-30 tablet:mr-3 laptop:mr-5'
                         onClick={() => dispatch(addToCart(product))}>
                         Add to cart
                       </Button>
@@ -64,8 +64,8 @@ const Categories = () => {
                   </Box>
                 </Box>
               ))}
-              <Card className=' w-48 h-48 mb-28 rounded-xl bg-gray-300 shadow-none flex items-center justify-center ml-3'>
-                <Link to={'/categories/' + category.title} onClick={() => dispatch(showAllProduct(category))} className="text-gray-700 text-lg no-underline" >
+              <Card className='flex items-center justify-center w-48 h-48 ml-3 bg-gray-300 shadow-none mb-28 rounded-xl'>
+                <Link to={'/categories/' + category.title} onClick={() => dispatch(showAllProduct(category))} className="text-lg text-gray-700 no-underline" >
                   Show all
                 </Link>
                 <ArrowRightAlt className="text-gray-600" />
