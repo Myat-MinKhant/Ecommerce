@@ -11,7 +11,9 @@ export const filterSlice = createSlice({
         filter: (state, action) => {
             const { value, list } = action.payload;
             state.filterResult = [...list];
-            const result = state.filterResult.filter(product => product.color === value.toLowerCase())
+            const findColor = state.filterResult.map(product => product.color)
+            const result = findColor.map(color => color)
+            console.log(findColor);
             console.log(result);
             console.log(state.filterResult);
         }
