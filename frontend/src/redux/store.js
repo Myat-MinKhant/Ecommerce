@@ -5,7 +5,6 @@ import wishListReducer from "./functions/wishListSlice";
 import productDetailReducer from "./functions/productDetailSlice";
 import categoriesReducer from './functions/categoriesApi'
 import showAllProductReducer from './functions/ShowAllProductSlice'
-import filterReducer from "./functions/filterSlice";
 
 export default configureStore({
   reducer: {
@@ -15,6 +14,6 @@ export default configureStore({
     productDetail: productDetailReducer,
     categories: categoriesReducer,
     showAllProduct: showAllProductReducer,
-    filterProduct: filterReducer,
+    filterResult: showAllProductReducer,
   },
 });
