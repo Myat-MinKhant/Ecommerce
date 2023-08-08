@@ -7,7 +7,7 @@ import { addToCart } from '../redux/functions/cartSlice'
 import { addToWishList } from '../redux/functions/wishListSlice'
 import { productDetailShow } from '../redux/functions/productDetailSlice'
 import { getCategories } from "../redux/functions/categoriesApi";
-import { showAllProducts } from "../redux/functions/ShowAllProductSlice";
+import { showAllProduct } from '../redux/functions/filterProductSlice'
 
 const Categories = () => {
   const { categories } = useSelector(state => state.categories)
@@ -65,7 +65,7 @@ const Categories = () => {
                 </Box>
               ))}
               <Card className='flex items-center justify-center w-48 h-48 ml-3 bg-gray-300 shadow-none mb-28 rounded-xl'>
-                <Link to={'/categories/' + category.title} onClick={() => dispatch(showAllProducts(category))} className="text-lg text-gray-700 no-underline" >
+                <Link to={'/categories/' + category.title} onClick={() => dispatch(showAllProduct(category))} className="text-lg text-gray-700 no-underline" >
                   Show all
                 </Link>
                 <ArrowRightAlt className="text-gray-600" />

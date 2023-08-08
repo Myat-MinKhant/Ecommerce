@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import { Box, Button, Card, Checkbox, Container, FormControl, MenuItem, Select, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
@@ -6,18 +6,26 @@ import { useSelector, useDispatch } from 'react-redux'
 import { addToWishList } from '../redux/functions/wishListSlice'
 import { addToCart } from '../redux/functions/cartSlice'
 import { productDetailShow } from '../redux/functions/productDetailSlice'
-import { filterByColor, filterByPriceLowestToHighest, filterByPriceHighestToLowest } from '../redux/functions/ShowAllProductSlice'
+import { filterBySort, filterByColor } from '../redux/functions/filterProductSlice'
 
 function ShowAll() {
     const { wishListItems } = useSelector(state => state.wishListItems)
-    const { showAllProduct } = useSelector(state => state.showAllProduct)
-    const colors = useRef(['All', 'Black', 'Red', 'Purple', 'Blue', 'Silver', 'White', 'Green'])
+    const { showAllProduct } = useSelector(state => state.filterProduct)
+    const colors = useRef(['All', 'black', 'red', 'purple', 'blue', 'silver', 'white', 'green'])
+    const sorts = useRef(['All', 'lowest price', 'highest price'])
+    const [colorOption, setColorOption] = useState('All')
+    const [sortOption, setSortOption] = useState('All')
     const dispatch = useDispatch();
 
     const category = showAllProduct.filterProducts || showAllProduct.products;
 
-    const handleFilterByColor = (e) => {
-        dispatch(filterByColor({ value: e.target.value, list: showAllProduct }));
+    const handleBySort = (e) => {
+        setSortOption(e.target.value)
+        dispatch(filterBySort({ sort: e.target.value, list: showAllProduct, colorOption }))
+    }
+    const handleByColor = (e) => {
+        setColorOption(e.target.value)
+        dispatch(filterByColor({ color: e.target.value, list: showAllProduct, sortOption }))
     }
 
     return (
@@ -32,7 +40,7 @@ function ShowAll() {
                             <FormControl sx={{
                                 "& fieldset": { border: 'none' },
                             }} size='small' className='h-10 bg-gray-300 border-0 rounded-lg outline-none w-36' >
-                                <Select defaultValue={'All'} onChange={handleFilterByColor}>
+                                <Select defaultValue={'All'} onChange={handleByColor}>
                                     {colors.current.map(color => (
                                         <MenuItem value={color} >
                                             <Typography>color: {color}</Typography>
@@ -40,14 +48,13 @@ function ShowAll() {
                                     ))}
                                 </Select>
                             </FormControl>
-
                             <FormControl sx={{
                                 "& fieldset": { border: 'none' },
-                            }} size='small' className='h-10 bg-gray-300 border-0 rounded-lg outline-none w-48' >
-                                <Select defaultValue={0} >
-                                    <MenuItem value={0}>Sort: All</MenuItem>
-                                    <MenuItem value={1} onClick={() => dispatch(filterByPriceLowestToHighest(showAllProduct))}>Sort: lowest price</MenuItem>
-                                    <MenuItem value={2} onClick={() => dispatch(filterByPriceHighestToLowest(showAllProduct))}>Sort: highest price</MenuItem>
+                            }} size='small' className='h-10 bg-gray-300 border-0 rounded-lg outline-none w-36' >
+                                <Select defaultValue={'All'} onChange={handleBySort}>
+                                    {sorts.current.map(sort => (
+                                        <MenuItem value={sort}>Sort: {sort}</MenuItem>
+                                    ))}
                                 </Select>
                             </FormControl>
                         </Box>
@@ -56,7 +63,7 @@ function ShowAll() {
                     <Box sx={{ height: "300px" }}
                         className='flex flex-wrap items-center gap-5 mobile:justify-center mobile:gap-10 tablet:gap-5 laptop:gap-0 tablet:justify-start laptop:ml-7'>
                         {category.length === 0
-                            ? <Typography variant={'h6'} className=' w-full text-center'>No Product Found....</Typography>
+                            ? <Typography variant={'h6'} className='w-full text-center '>No Product Found....</Typography>
                             : category.map(product => (
                                 <Box className=' tablet:mb-5 laptop:mb-8' key={product.id}>
                                     <Card className='w-48 h-48 bg-transparent shadow-none rounded-xl'>

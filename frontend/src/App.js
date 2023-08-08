@@ -19,7 +19,7 @@ import ShowAll from "./pages/ShowAll";
 
 function App() {
   const { productDetail } = useSelector((state) => state.productDetail);
-  const { showAllProduct } = useSelector(state => state.showAllProduct);
+  const { showAllProduct } = useSelector(state => state.filterProduct);
 
   return (
     <Router>
