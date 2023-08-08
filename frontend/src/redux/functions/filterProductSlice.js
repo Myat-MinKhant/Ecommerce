@@ -39,16 +39,25 @@ export const filterProductSlice = createSlice({
             state.showAllProduct.filterProducts = [...list.products]
             const productFound = colorOption === 'All' || state.showAllProduct.filterProducts.some(product => product.color === colorOption)
 
-            productFound
-                ? state.showAllProduct.filterProducts = [...list.products]
-                : state.showAllProduct.filterProducts = []
+            state.showAllProduct.filterProducts = productFound
+                ? [...list.products]
+                : []
 
-            if (sort !== "All") {
-                if (sort === 'lowest price') {
-                    state.showAllProduct.filterProducts = ascendingOrder(state.showAllProduct.filterProducts)
-                } else if (sort === 'highest price') {
-                    state.showAllProduct.filterProducts = decendingOrder(state.showAllProduct.filterProducts)
-                }
+            state.showAllProduct.filterProducts =
+                colorOption && colorOption === 'All'
+                    ? [...list.products]
+                    : colorOption !== "All"
+                        ? state.showAllProduct.filterProducts = state.showAllProduct.filterProducts.filter(product => product.color === colorOption)
+                        : sort === 'lowest price'
+                            ? state.showAllProduct.filterProducts = ascendingOrder(state.showAllProduct.filterProducts)
+                            : sort === 'highest price'
+                                ? state.showAllProduct.filterProducts = decendingOrder(state.showAllProduct.filterProducts)
+                                : [...list.products]
+
+            if (sort === 'lowest price') {
+                state.showAllProduct.filterProducts = ascendingOrder(state.showAllProduct.filterProducts)
+            } else if (sort === 'highest price') {
+                state.showAllProduct.filterProducts = decendingOrder(state.showAllProduct.filterProducts)
             }
         }
     }
