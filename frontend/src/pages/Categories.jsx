@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Container, Typography, Box, Card, Checkbox, Button } from "@mui/material";
 import { Favorite, ArrowRightAlt, FavoriteBorder } from '@mui/icons-material'
