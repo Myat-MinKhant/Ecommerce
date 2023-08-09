@@ -30,7 +30,7 @@ const Categories = () => {
               <Box sx={{ height: "300px" }} className='flex min-w-max items-center gap-5 mobile:justify-center mobile:gap-10 tablet:gap-5 laptop:gap-0 tablet:justify-start laptop:ml-7'>
                 {category.products.slice(0, 4).map(product => (
                   <Box className=' tablet:mb-5 laptop:mb-8' key={product.id}>
-                    <Card className='w-48 h-48 bg-transparent shadow-none rounded-xl'>
+                    <Card className='w-48 h-48 bg-transparent shadow-none z-[10] rounded-xl'>
                       <Box className='relative flex w-full h-full bg-white'>
                         <Link to={'/detail/' + product.id} onClick={() => dispatch(productDetailShow(product))} className="m-auto "><img
                           className=' w-25 h-28'
