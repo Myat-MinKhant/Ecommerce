@@ -22,8 +22,8 @@ const Products = () => {
   // }
 
   return (
-    <>
-      <Container className=" products-container h-fit">
+    <div className=' w-full'>
+      <Container className="products-container h-fit w-full">
         <Typography className=' header font-main text-black text-4xl mt-12 mb-2 mobile:mb-5 laptop:ml-14'>
           New Arrivals
         </Typography>
@@ -67,7 +67,7 @@ const Products = () => {
           ))}
         </Box>
       </Container>
-    </>
+    </div>
   );
 };
 

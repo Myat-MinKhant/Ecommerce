@@ -49,8 +49,8 @@ const Account = () => {
 
 
     return (
-        <div className=' bg-body w-full h-fit'>
-            <Container className='tablet:flex h-fit gap-4 laptop:gap-0'>
+        <div className=' bg-second w-full h-fit'>
+            <Container className='w-full tablet:flex h-fit gap-4 laptop:gap-0 overflow-x-hidden'>
                 <Box className=' laptop:w-1/2 py-10 my-10 laptop:pt-14 laptop:pb-5 rounded-xl bg-white tablet:w-80 tablet:px-8 laptop:ml-8 tablet:shadow-xl'>
                     <Typography id='order' component={'span'} className=' font-main cursor-pointer laptop:text-4xl text-3xl mobile:ml-10 tablet:ml-0 mr-7 underline underline-offset-8' onClick={orderShow}>Orders</Typography>
                     <Typography id='wish-list' component={'span'} className=' font-main cursor-pointer laptop:text-4xl text-3xl text-third ' onClick={wishListShow}>Wistlist</Typography>
@@ -113,7 +113,7 @@ const Account = () => {
                                 <Typography className=' text-2xl text-third'>Your wishlist is empty</Typography>
                             </Box>
                         ) : (
-                            <Box className=' mt-7 tablet:mt-10 flex flex-wrap justify-center laptop:justify-start desktop:gap-10'>
+                            <Box className=' mt-7 tablet:mt-10 flex flex-wrap justify-center laptop:justify-start laptop:gap-5 desktop:gap-10 laptop:px-2 laptop:ml-5'>
                                 {wishListItems.map(item => (
                                     <Box className=' mx-9 mt-5 tablet:mx-0 desktop:mx-3'>
                                         <Card className=' w-48 h-48 rounded-xl bg-transparent shadow-none'>
@@ -153,8 +153,8 @@ const Account = () => {
                     </Box>
                 </Box>
 
-                <Box className=' w-full tablet:w-1/3 laptop:w-1/2'>
-                    <Box className='flex flex-col gap-2 bg-white pt-8 pb-5 mb-5 tablet:mb-0 tablet:pt-14 tablet:pb-10 rounded-xl w-full tablet:w-80 laptop:w-96 ml-0 laptop:ml-10 laptop:mr-4 mt-10 shadow-xl' position={'sticky'}>
+                <Box className=' w-full tablet:w-1/3'>
+                    <Box className='flex flex-col gap-2 bg-white pt-8 pb-5 mb-5 tablet:mb-0 tablet:pt-14 tablet:pb-10 rounded-xl w-full tablet:w-80 laptop:w-[360px] desktop:w-96 ml-0 laptop:ml-5 laptop:mr-4 mt-10 shadow-xl' position={'sticky'}>
                         <Typography className=' font-main text-3xl laptop:text-4xl w-5/6 mx-auto font-extrabold tablet:mb-6 mb-4'>Account details</Typography>
                         <TextField sx={style}
                             variant="outlined" size='small' placeholder='Myat Min Khant' className='w-5/6 mx-auto' />

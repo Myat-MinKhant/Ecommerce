@@ -29,14 +29,14 @@ function ShowAll() {
     }
 
     return (
-        <div className='w-screen overflow-hidden bg-second h-cart'>
-            <Container className="pt-5 px-14" key={showAllProduct.id}>
-                <Box className=''>
-                    <Box className='flex items-center justify-between mb-5 pr-7'>
+        <div className='w-full bg-second h-fit mobile:pb-5 tablet:pb-0 overflow-x-hidden'>
+            <Container className="pt-5 laptop:px-14 h-full w-full" key={showAllProduct.id}>
+                <Box>
+                    <Box className='flex flex-col tablet:flex-row items-center tablet:justify-between mb-5'>
                         <Typography component={"p"} className='mb-5 text-3xl font-extrabold laptop:ml-7'>
                             {showAllProduct.title}
                         </Typography>
-                        <Box className='flex items-center gap-5'>
+                        <Box className='flex items-center gap-5 laptop:pr-5'>
                             <FormControl sx={{
                                 "& fieldset": { border: 'none' },
                             }} size='small' className='h-10 bg-gray-300 border-0 rounded-lg outline-none w-36' >
@@ -50,7 +50,7 @@ function ShowAll() {
                             </FormControl>
                             <FormControl sx={{
                                 "& fieldset": { border: 'none' },
-                            }} size='small' className='h-10 bg-gray-300 border-0 rounded-lg outline-none w-36' >
+                            }} size='small' className='h-10 bg-gray-300 border-0 rounded-lg outline-none w-36 tablet:w-48' >
                                 <Select defaultValue={'All'} onChange={handleBySort}>
                                     {sorts.current.map(sort => (
                                         <MenuItem value={sort}>Sort: {sort}</MenuItem>
@@ -60,10 +60,10 @@ function ShowAll() {
                         </Box>
                     </Box>
 
-                    <Box sx={{ height: "300px" }}
-                        className='flex flex-wrap items-center gap-5 mobile:justify-center mobile:gap-10 tablet:gap-5 laptop:gap-0 tablet:justify-start laptop:ml-7'>
+                    <Box
+                        className='flex flex-wrap items-center pb-8 mobile:justify-center mobile:gap-10 laptop:gap-0 tablet:justify-start laptop:ml-7'>
                         {category.length === 0
-                            ? <Typography variant={'h6'} className='w-full text-center '>No Product Found....</Typography>
+                            ? <Typography variant={'h6'} className='w-full mt-10 laptop:mt-0 text-center h-[350px]'>No Product Found....</Typography>
                             : category.map(product => (
                                 <Box className=' tablet:mb-5 laptop:mb-8' key={product.id}>
                                     <Card className='w-48 h-48 bg-transparent shadow-none rounded-xl'>

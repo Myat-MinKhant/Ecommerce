@@ -14,8 +14,8 @@ const StyledBox = styled("div")({
 
 const PageTitle = () => {
   return (
-    <div div className=" bg-main tablet:pb-5 laptop:pb-0 laptop:pt-16 ">
-      <Container className='mobile:pb-10 tablet:flex tablet:flex-row-reverse tablet:pb-4 laptop:gap-10 laptop:px-20 laptop:pb-1'>
+    <div div className=" bg-main tablet:pb-5 laptop:pb-0 laptop:pt-16 w-full">
+      <Container className='w-full mobile:pb-10 tablet:flex tablet:flex-row-reverse tablet:pb-4 laptop:gap-10 laptop:px-20 laptop:pb-1'>
         <Box className='tablet:w-1/2 laptop:w-3/5'>
           <StyledBox className=' mobile:p-0 tablet:mt-5 laptop:mt-0' />
         </Box>
@@ -38,7 +38,7 @@ const PageTitle = () => {
               Read more
             </Button>
             <Button
-              className='  pre-order-button text-main bg-second font-bold p-5 h-11 capitalize mobile:w-2/3 mobile:text-sm tablet:text-sm tablet:w-5/12' startIcon={<ShoppingCart />}>
+              className='  pre-order-button text-main bg-second font-bold p-5 h-11 capitalize mobile:w-2/3 mobile:text-sm tablet:text-sm tablet:w-5/12 overflow-hidden' startIcon={<ShoppingCart />}>
               Pre-Order
             </Button>
           </Box>

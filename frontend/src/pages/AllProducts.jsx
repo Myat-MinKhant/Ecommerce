@@ -18,7 +18,7 @@ const AllProducts = () => {
   }, [])
 
   return (
-    <div className='w-screen h-fit'>
+    <div className='w-full h-fit'>
       <Container className="h-full pt-5 laptop:px-14">
         <Box>
           <Typography component={"p"} className='text-3xl font-extrabold font-main laptop:ml-7'>

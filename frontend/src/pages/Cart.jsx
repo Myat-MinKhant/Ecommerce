@@ -97,7 +97,7 @@ const Cart = () => {
                                         <TableRow>
                                             <TableCell rowSpan={3} />
                                             <TableCell align='right' colSpan={2} className=' text-xl'>Subtotal</TableCell>
-                                            <TableCell align="right" className=' text-2xl'>
+                                            <TableCell align="right" className=' text-2xl '>
                                                 ${cartSubTotal}
                                             </TableCell>
                                         </TableRow>
@@ -106,8 +106,8 @@ const Cart = () => {
                                             <TableCell align="right" className=' text-2xl'>${shippingAmount}</TableCell>
                                         </TableRow>
                                         <TableRow>
-                                            <TableCell align='right' colSpan={2} className=' text-xl font-extrabold col-span-2'>Total</TableCell>
-                                            <TableCell align="right" className=' text-2xl font-extrabold '>${calculateFinalTotal()}</TableCell>
+                                            <TableCell align='right' colSpan={2} className='pb-5 text-xl font-extrabold col-span-2'>Total</TableCell>
+                                            <TableCell align="right" className='pb-5 text-2xl font-extrabold'>${calculateFinalTotal()}</TableCell>
                                         </TableRow>
                                     </TableBody>
                                 </Table>
@@ -169,17 +169,16 @@ const Cart = () => {
                                             <TableCell align="right" className=' text-2xl pr-7'>${shippingAmount}</TableCell>
                                         </TableRow>
                                         <TableRow>
-                                            <TableCell align='right' className=' text-xl font-extrabold'>Total</TableCell>
-                                            <TableCell align="right" className=' text-2xl font-extrabold pr-7'>${calculateFinalTotal()}</TableCell>
+                                            <TableCell align='right' className='pb-10 text-xl font-extrabold'>Total</TableCell>
+                                            <TableCell align="right" className='pb-10 text-2xl font-extrabold pr-7'>${calculateFinalTotal()}</TableCell>
                                         </TableRow>
                                     </TableBody>
                                 </Table>
                             </TableContainer>
                         </Box>
 
-
                         <Box className='laptop:w-2/6 desktop:ml-5'>
-                            <Box className='flex flex-col gap-2 bg-white pt-16 rounded-xl laptop:w-[360px] desktop:w-96 pb-10 laptop:ml-5 mt-10 laptop:mt-0 shadow-xl' position={'sticky'}>
+                            <Box className='flex flex-col gap-2 bg-white pt-8 tablet:pt-16 rounded-xl laptop:w-[360px] desktop:w-96 pb-10 laptop:ml-5 mt-10 laptop:mt-0 shadow-xl' position={'sticky'}>
                                 <Typography className=' text-3xl w-5/6 mx-auto font-extrabold mb-6'>Order information</Typography>
                                 <TextField sx={style}
                                     variant="outlined" size='small' placeholder='Name' className='w-5/6 mx-auto' />

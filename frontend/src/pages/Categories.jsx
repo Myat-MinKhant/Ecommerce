@@ -19,9 +19,9 @@ const Categories = () => {
   }, [dispatch])
 
   return (
-    <div className='w-screen bg-second h-fit'>
+    <div className='w-full bg-second h-fit'>
       {categories.map(category => (
-        <Container className="pt-5 px-14" key={category.id}>
+        <Container className="px-14" key={category.id}>
           <Box className='mt-5 '>
             <Typography component={"p"} className='mb-5 text-3xl font-extrabold laptop:ml-7'>
               {category.title}

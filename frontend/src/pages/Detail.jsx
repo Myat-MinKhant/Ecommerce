@@ -20,26 +20,26 @@ const Detail = () => {
 
     return (
         <div className=' bg-second w-screen h-fit'>
-            <Container className=' px-14 mobile:py-10'>
-                <Box className=' w-full h-fit mb-16 tablet:flex tablet:gap-10'>
-                    <Box className=' bg-white mobile:w-1/2 mobile:h-fit mobile:m-auto mobile:p-5 tablet:w-4/12 h-72 mr-20 rounded-xl tablet:mt-5'>
+            <Container className=' laptop:px-20 mobile:py-10'>
+                <Box className=' w-full h-fit mb-16 tablet:flex laptop:gap-6'>
+                    <Box className=' bg-white mobile:w-full mobile:h-fit mobile:m-auto mobile:py-10 tablet:py-0 laptop:mt-10 tablet:w-6/12 h-72 tablet:mr-20 rounded-xl tablet:mt-5'>
                         <Box className=' flex h-2/3 tablet:mt-10 '>
-                            <img className=" w-full tablet:w-5/6 laptop:w-7/12 h-5/6 m-auto "
+                            <img className=" w-3/6 tablet:w-4/6 laptop:w-7/12 h-5/6 m-auto "
                                 alt='productImage'
                                 src={productDetail.image}
                             />
                         </Box>
                         <Box className=' h-1/3 flex'>
-                            <Typography className=' m-auto mt-5 tablet:mt-5 tablet:pb-5 '>More Image...</Typography>
+                            <Typography className=' m-auto mt-7 tablet:mt-5 tablet:pb-5 '>More Image...</Typography>
                         </Box>
                     </Box>
-                    <Box className=' mobile:mt-10 tablet:w-7/12  tablet:mt-10 laptop:mt-16'>
+                    <Box className=' mobile:mt-10 tablet:w-11/12 tablet:mt-10 laptop:mt-16'>
                         <Typography className=' font-main text-3xl font-extrabold mb-5'>{productDetail.name}</Typography>
                         <Typography className=' font-main text-lg mb-5'>{productDetail.description}</Typography>
-                        <Box className=' flex flex-wrap  items-center justify-between tablet:justify-start tablet:flex-nowrap gap-5 tablet:gap-3'>
-                            <Typography className=' font-main  font-bold text-2xl'>${productDetail.price}</Typography>
+                        <Box className=' flex flex-wrap pt-3 items-center justify-between tablet:justify-start tablet:flex-nowrap gap-5 tablet:gap-3'>
+                            <Typography className=' font-main tablet:font-bold text-3xl tablet:text-2xl'>${productDetail.price}</Typography>
                             <Button
-                                className=' text-white bg-green-950 h-10 font-bold capitalize w-fit laptop:px-7 tablet:w-1/3 tablet:px-1'
+                                className=' text-white bg-green-950 h-10 font-bold capitalize w-2/3 laptop:px-7 tablet:w-1/3 tablet:px-1'
                                 startIcon={<ShoppingCart />} onClick={() => dispatch(addToCart(productDetail))}>
                                 Add to cart
                             </Button>
