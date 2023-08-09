@@ -113,9 +113,9 @@ const Account = () => {
                                 <Typography className=' text-2xl text-third'>Your wishlist is empty</Typography>
                             </Box>
                         ) : (
-                            <Box className=' mt-7 tablet:mt-10 flex flex-wrap justify-center laptop:justify-start'>
+                            <Box className=' mt-7 tablet:mt-10 flex flex-wrap justify-center laptop:justify-start desktop:gap-10'>
                                 {wishListItems.map(item => (
-                                    <Box className=' mx-9 mt-5 laptop:mx-5 tablet:mx-0 '>
+                                    <Box className=' mx-9 mt-5 tablet:mx-0 desktop:mx-3'>
                                         <Card className=' w-48 h-48 rounded-xl bg-transparent shadow-none'>
                                             <Box className='flex w-full h-full bg-white relative'>
                                                 <Link to={'/detail/' + item.id} onClick={() => dispatch(productDetailShow(item))} className=" m-auto"><img
@@ -138,7 +138,7 @@ const Account = () => {
                                                     className='font-main text-2xl font-extrabold mr-5'>
                                                     ${item.price}
                                                 </Typography>
-                                                <Button className=' text-green-900 border-solid border-2 text-md font-bold w-30 h-5 capitalize p-4 mt-3 tablet:mr-5'
+                                                <Button className=' text-green-900 border-solid border-2 text-md font-bold w-30 h-5 capitalize p-4 mt-3 tablet:mr-3 '
                                                     onClick={() => dispatch(addToCart(item))}>
                                                     Add to cart
                                                 </Button>

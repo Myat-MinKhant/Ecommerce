@@ -19,7 +19,7 @@ const AllProducts = () => {
 
   return (
     <div className='w-screen h-fit'>
-      <Container className="h-full pt-5">
+      <Container className="h-full pt-5 laptop:px-14">
         <Box>
           <Typography component={"p"} className='text-3xl font-extrabold font-main laptop:ml-7'>
             All products
@@ -27,7 +27,7 @@ const AllProducts = () => {
         </Box>
         <Box
           sx={{ height: '100%', width: 'content' }}
-          className='flex flex-wrap items-center my-5 mobile:justify-center mobile:gap-10 tablet:gap-5 laptop:gap-0 laptop:justify-start laptop:ml-7'>
+          className='flex flex-wrap items-center justify-center my-5 gap-10 laptop:justify-start tablet:gap-5 laptop:gap-0 laptop:ml-7'>
           {products.map(product => (
             <Box className=' tablet:mb-5 laptop:mb-8'>
               <Card className='w-48 h-48 bg-transparent shadow-none rounded-xl'>

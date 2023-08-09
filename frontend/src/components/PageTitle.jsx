@@ -16,8 +16,8 @@ const PageTitle = () => {
   return (
     <div div className=" bg-main tablet:pb-5 laptop:pb-0 laptop:pt-16 ">
       <Container className='mobile:pb-10 tablet:flex tablet:flex-row-reverse tablet:pb-4 laptop:gap-10 laptop:px-20 laptop:pb-1'>
-        <Box className='min-w-fit tablet:w-1/2 laptop:w-3/5'>
-          <StyledBox className=' mobile:p-0  tablet:mt-5' />
+        <Box className='tablet:w-1/2 laptop:w-3/5'>
+          <StyledBox className=' mobile:p-0 tablet:mt-5 laptop:mt-0' />
         </Box>
         <Box className='tablet:w-1/2 tablet:m-0 laptop:mr-9'>
           <Typography

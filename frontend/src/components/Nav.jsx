@@ -16,11 +16,11 @@ const Nav = () => {
   return (
     <>
       <AppBar className=' nav-bar bg-main h-64 static w-screen tablet:h-20 laptop:h-26'>
-        <Container className=' h-full w-screen tablet:flex tablet:items-center tablet:justify-between laptop:justify-around'>
+        <Container className=' h-full w-screen tablet:flex tablet:items-center tablet:justify-between laptop:px-20'>
           <Link to='/' className=" no-underline">
             <Typography
               component={"p"}
-              className=' nav-logo text-second font-main  text-3xl my-3 text-center tablet:text-start tablet:my-0 laptop:my-0'>
+              className=' nav-logo text-second font-main text-3xl my-3 text-center tablet:text-start tablet:my-0 laptop:my-0'>
               Ecommerce
             </Typography>
           </Link>
